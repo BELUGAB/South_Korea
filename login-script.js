@@ -51,7 +51,7 @@ const users = [
   // Utilisateur admin ajouté ici
   {
     id: "admin",
-    password: "admin",
+    password: "coree2024",
     content: "", // Pas de message prédéfini
     image: "", // Pas d'image
   },
