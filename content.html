@@ -23,43 +23,18 @@
           placeholder="Laissez un message ici..."
           rows="5"
         ></textarea>
-        <button onclick="saveFeedback()">Envoyer</button>
+        <button id="save-feedback-btn">Envoyer</button>
       </div>
 
       <!-- Boutons de déconnexion et de laisser un message -->
       <div class="buttons-container">
-        <button onclick="logout()">Déconnexion</button>
-        <button onclick="toggleMessageBox()">Laisser un message</button>
+        <!-- HTML pour les boutons -->
+        <button id="logout-btn">Déconnexion</button>
+        <button id="message-btn">Laisser un message</button>
       </div>
     </div>
 
-    <!-- Importer Firebase et les fonctions nécessaires -->
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-      import {
-        getFirestore,
-        collection,
-        addDoc,
-      } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
-      // Configuration Firebase
-      const firebaseConfig = {
-        apiKey: "AIzaSyCp0MHrlUNcoVbGDgD5bCKSlbdLJWVmJz4",
-        authDomain: "feedback-coree-du-sud.firebaseapp.com",
-        projectId: "feedback-coree-du-sud",
-        storageBucket: "feedback-coree-du-sud.firebasestorage.app",
-        messagingSenderId: "588294660667",
-        appId: "1:588294660667:web:41b4296bbc114a0cb7721e",
-      };
-
-      // Initialiser Firebase
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      // Exposer `db` à `window` pour l'utiliser dans le script externe
-      window.db = db;
-    </script>
-
+    <!-- Charger le fichier JavaScript après tout le HTML -->
     <script src="content-script.js"></script>
   </body>
 </html>
