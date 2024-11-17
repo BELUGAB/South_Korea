@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단비 & 두부</title>
+    <link rel="stylesheet" href="login-style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>연결</h2>
+
+      <form id="login-form">
+        <input type="text" id="userId" placeholder="ID" required />
+        <input type="password" id="password" placeholder="비밀번호" required />
+        <button type="submit">로그인</button>
+        <p id="error-message" style="color: red"></p>
+      </form>
+
+      <button onclick="goToHomePage()" class="home-button">
+        홈페이지로 돌아가기
+      </button>
+    </div>
+
+    <script src="login-script.js"></script>
+  </body>
+</html>

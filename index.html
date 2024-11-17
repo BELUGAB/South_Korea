@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Souvenirs de Corée</title>
+    <link rel="stylesheet" href="vitrine-style.css" />
+  </head>
+  <body>
+    <!-- Section de présentation -->
+    <header class="header">
+      <div class="overlay">
+        <h1 class="header-title">Souvenirs de Corée du Sud</h1>
+        <p class="header-subtitle">
+          한국 친구들만 접속할 수 있습니다. 제가 가르쳐 준 단어(영어로 쓰기)로
+          로그인하세요
+        </p>
+        <div class="button-container">
+          <button onclick="window.location.href='login.html'">로그인</button>
+          <button
+            class="explore-button"
+            onclick="window.open('https://www.polarsteps.com/BELUGAB/13556150-', '_blank')"
+          >
+            <svg
+              class="svgIcon"
+              viewBox="0 0 512 512"
+              height="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+              ></path>
+            </svg>
+            Polarstep
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="showcase-content">
+      <div class="city-grid">
+        <section class="showcase-item" onclick="showPhotos('seoul-photos')">
+          <h3>서울 - Séoul</h3>
+          <img
+            src="https://img.lonelyplanet.fr/s3fs-public/styles/wide/public/2024-01/seoul.jpg.webp?itok=H5dK-x6x"
+            alt="Vue de Séoul"
+            class="city-image"
+          />
+          <p>La ville vibrante qui ne dort jamais...</p>
+          <div id="seoul-photos" style="display: none">
+            <img src="images/7.png" alt="Séoul Photo 1" />
+            <img src="images/8.png" alt="Séoul Photo 2" />
+            <img src="images/9.png" alt="Séoul Photo 3" />
+            <img src="images/10.png" alt="Séoul Photo 4" />
+            <img src="images/11.png" alt="Séoul Photo 5" />
+            <img src="images/12.png" alt="Séoul Photo 6" />
+          </div>
+        </section>
+
+        <section class="showcase-item" onclick="showPhotos('daejeon-photos')">
+          <h3>대전 - Daejeon</h3>
+          <img
+            src="https://blog.southofseoul.net/wp-content/uploads/2022/08/Daejeon-Places-to-Stay.png"
+            alt="Vue de Daejeon"
+            class="city-image"
+          />
+          <p>Des moments chaleureux dans cette ville pleine de charme...</p>
+          <div id="daejeon-photos" style="display: none">
+            <img src="images/1.png" alt="Daejeon Photo 1" />
+            <img src="images/2.png" alt="Daejeon Photo 2" />
+            <img src="images/3.png" alt="Daejeon Photo 3" />
+            <img src="images/4.png" alt="Daejeon Photo 4" />
+            <img src="images/6.png" alt="Daejeon Photo 5" />
+            <img src="images/5.png" alt="Daejeon Photo 6" />
+          </div>
+        </section>
+
+        <section class="showcase-item" onclick="showPhotos('cheonan-photos')">
+          <h3>천안 - Cheonan</h3>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sinbu-Dong.jpg/1200px-Sinbu-Dong.jpg"
+            alt="Vue de Cheonan"
+            class="city-image"
+          />
+          <p>Découvertes et aventures...</p>
+          <div id="cheonan-photos" style="display: none">
+            <img src="https://via.placeholder.com/150" alt="Cheonan Photo 1" />
+            <img src="https://via.placeholder.com/150" alt="Cheonan Photo 2" />
+            <img src="https://via.placeholder.com/150" alt="Cheonan Photo 3" />
+            <img src="https://via.placeholder.com/150" alt="Cheonan Photo 4" />
+            <img src="https://via.placeholder.com/150" alt="Cheonan Photo 5" />
+            <img src="https://via.placeholder.com/150" alt="Cheonan Photo 6" />
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Modale pour afficher les photos -->
+    <div id="photo-modal" class="photo-modal" onclick="closeModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-button" onclick="closeModal()">×</span>
+        <div id="modal-photo-grid" class="photo-grid"></div>
+      </div>
+    </div>
+
+    <script src="vitrine-script.js"></script>
+  </body>
+</html>
