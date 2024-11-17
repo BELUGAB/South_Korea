@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boîte de Souvenirs - Contenu</title>
+    <link rel="stylesheet" href="content-style.css" />
+  </head>
+  <body>
+    <div class="content-container">
+      <h2>Merci beaucoup <span id="user-name"></span>!</h2>
+
+      <div class="message-box">
+        <div id="photos-container" class="photos-grid"></div>
+        <p id="user-content"></p>
+      </div>
+
+      <!-- Boîte de message (cachée par défaut) -->
+      <div id="message-box" class="message-box">
+        <h3>
+          메시지를 남기고 몇 초만 기다려 주세요 : (답변이 제 서버에 저장되는
+          시간입니다)
+        </h3>
+        <textarea
+          id="feedback"
+          placeholder="Laissez un message ici..."
+          rows="5"
+        ></textarea>
+        <button id="save-feedback-btn">Envoyer / 보내기</button>
+      </div>
+
+      <!-- Boutons de déconnexion et de laisser un message -->
+      <div class="buttons-container">
+        <!-- HTML pour les boutons -->
+        <button id="logout-btn">Déconnexion / 로그아웃</button>
+        <button id="message-btn">Laisser un message / 메시지 남기기</button>
+      </div>
+    </div>
+
+    <!-- Charger le fichier JavaScript après tout le HTML -->
+    <script src="content-script.js"></script>
+  </body>
+</html>
