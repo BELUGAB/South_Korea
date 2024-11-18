@@ -57,19 +57,33 @@ const users = [
   },
 ];
 
+// Activer le clavier coréen lorsque le champ "password" est sélectionné
 document.getElementById("password").addEventListener("focus", () => {
-  document.getElementById("password").setAttribute("lang", "ko");
+  const passwordField = document.getElementById("password");
+  passwordField.setAttribute("lang", "ko");
 });
 
-// Fonction de validation du formulaire de connexion
+// Réinitialiser le champ "password" lorsque le focus est perdu
+document.getElementById("password").addEventListener("blur", () => {
+  const passwordField = document.getElementById("password");
+  passwordField.removeAttribute("lang");
+});
+
+// Mettre automatiquement le focus sur le champ "password" lors du chargement
+window.onload = () => {
+  document.getElementById("password").focus();
+};
+
+// Fonction de validation du formulaire
 document
   .getElementById("login-form")
   .addEventListener("submit", function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Empêche le comportement par défaut
 
-    const userId = document.getElementById("userId").value;
-    const password = document.getElementById("password").value;
+    const userId = document.getElementById("userId").value.trim(); // Supprimer les espaces inutiles
+    const password = document.getElementById("password").value.trim();
 
+    // Trouver l'utilisateur correspondant
     const user = users.find((u) => u.id === userId && u.password === password);
 
     if (user) {
@@ -78,19 +92,20 @@ document
       localStorage.setItem("userContent", user.content);
       localStorage.setItem("userImage", user.image);
 
-      // Si l'utilisateur est admin, rediriger vers la page admin
+      // Rediriger selon le rôle de l'utilisateur
       if (user.id === "admin") {
-        window.location.href = "admin.html"; // Rediriger vers admin
+        window.location.href = "admin.html";
       } else {
-        // Sinon, rediriger vers la page de contenu
         window.location.href = "content.html";
       }
     } else {
+      // Afficher un message d'erreur si les informations ne correspondent pas
       document.getElementById("error-message").textContent =
-        "아이디 또는 비밀번호가 잘못되었습니다."; // Message d'erreur
+        "아이디 또는 비밀번호가 잘못되었습니다.";
     }
   });
 
+// Redirection vers la page d'accueil
 function goToHomePage() {
-  window.location.href = "index.html"; // Redirige vers l'accueil
+  window.location.href = "index.html";
 }
