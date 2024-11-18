@@ -57,6 +57,10 @@ const users = [
   },
 ];
 
+document.getElementById("password").addEventListener("focus", () => {
+  document.getElementById("password").setAttribute("lang", "ko");
+});
+
 // Fonction de validation du formulaire de connexion
 document
   .getElementById("login-form")
