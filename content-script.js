@@ -76,7 +76,7 @@ function loadUserContent() {
       은서: "eunseo-photo",
       소희: "eunseo-photo",
       선주: "gwanhwe-photo",
-      경민: "eunseo-photo",
+      경민: "gyeongmin-photo",
     };
 
     // Appliquer la classe spécifique à l'utilisateur, si elle existe
