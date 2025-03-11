@@ -20,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Liste des utilisateurs
-const users = ["관휘", "시온", "은서", "소희", "퐁", "선주"];
+const users = ["관휘", "시온", "은서", "소희", "퐁", "선주","경민"];
 
 // Fonction pour récupérer les messages
 async function fetchUserMessages() {
